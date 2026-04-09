@@ -1,12 +1,14 @@
 const livros = require('./listaLivros');
 
-let maisCaro = 0;
+    function maiorValor(arrProdutos, posicaoInicial) {
+let maisCaro = posicaoInicial;
 
-for (let atual = 0; atual < livros.length; atual++) {
-    if (livros[atual].preco > livros[maisCaro].preco) {
+for (let atual = posicaoInicial; atual < arrProdutos.length; atual++) {
+    if (arrProdutos[atual].preco > arrProdutos[maisCaro].preco) {
         maisCaro = atual
     }
 }
+   return maisCaro;
+}
 
-console.log(`o livro mais caro custa ${livros[maisCaro].
-preco} e o título é ${livros[maisCaro].titulo} Trabalho realizado por Alice.`)
+module.exports = maiorValor;
